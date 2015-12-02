@@ -1,0 +1,11 @@
+from time import sleep
+def SingleMotor(ID, POS, TIME): 
+#ID: servo ID - POS: the target position - TIME:the time it takes for the servo to go to the target position POS
+  OldPos=api.GetMotorValue() #read the current servo position
+  DIS = abs(POS-OldPos) 
+  StepDelay=TIME/DIS
+  for i in range(OldPos,POS):
+    api.SetMotorValue(i)
+    sleep(StepDelay)
+    
+    
